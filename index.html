@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HappyPayal | Birthday Surprise</title>
+
   <style>
     /* Import fonts */
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); /* For heading */
@@ -89,7 +90,6 @@
       position: relative;
     }
 
-    /* Heading with bold Pacifico font */
     main h2 {
       font-family: 'Pacifico', cursive;
       font-size: 3rem;
@@ -100,7 +100,6 @@
       animation: floatText 3s ease-in-out infinite alternate;
     }
 
-    /* Paragraph with different font */
     main p {
       font-family: 'Roboto Slab', serif;
       font-size: 1.5rem;
@@ -197,7 +196,6 @@
   <main>
     <h2>🎊 "a Magical Day for a Magical Girl!" ✨ </h2>
     <p>Enter Payal's Date of Birth</p>
-
     <div class="input-section">
       <input type="password" id="dob" placeholder="DDMMYYYY" />
       <button onclick="checkLogin()">Let's Surprise Payal</button>
@@ -213,7 +211,6 @@
     function checkLogin() {
       const dob = document.getElementById("dob").value.trim();
       const errorDiv = document.getElementById("error");
-
       if (dob === "03102004") {
         window.location.href = "birthday.html";
       } else {
