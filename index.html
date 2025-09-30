@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HappyPayal | Birthday Surprise</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+    /* Import fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); /* For heading */
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap'); /* For paragraph */
 
     body {
       margin: 0;
@@ -16,9 +17,10 @@
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      overflow-x: hidden;
+      overflow: hidden;
     }
 
+    /* Floating sparkles background */
     .sparkle {
       position: absolute;
       width: 6px;
@@ -35,11 +37,11 @@
       100% { transform: translateY(-10vh) scale(1); opacity: 0; }
     }
 
+    /* Header / Navbar */
     header {
       background: #000;
-      padding: 10px 20px;
+      padding: 15px 30px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       border-bottom: 1px solid #0ff;
@@ -60,15 +62,10 @@
       letter-spacing: 1px;
     }
 
-    nav {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
     nav a {
+      margin-left: 20px;
       text-decoration: none;
-      font-size: 1rem;
+      font-size: 1.1rem;
       color: #f0f;
       text-shadow: 0 0 2px #f0f, 0 0 5px #f0f;
       transition: 0.3s;
@@ -79,6 +76,7 @@
       text-shadow: 0 0 3px #0ff, 0 0 8px #0ff;
     }
 
+    /* Main content */
     main {
       flex: 1;
       display: flex;
@@ -91,9 +89,10 @@
       position: relative;
     }
 
+    /* Heading with bold Pacifico font */
     main h2 {
       font-family: 'Pacifico', cursive;
-      font-size: 2.5rem;
+      font-size: 3rem;
       font-weight: bold;
       color: rgb(101, 8, 77);
       text-shadow: 0 0 6px #ff0, 0 0 12px rgb(181, 35, 40);
@@ -101,9 +100,10 @@
       animation: floatText 3s ease-in-out infinite alternate;
     }
 
+    /* Paragraph with different font */
     main p {
       font-family: 'Roboto Slab', serif;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       font-weight: 500;
       color: #0ff;
       text-shadow: 0 0 4px #0ff, 0 0 8px #f0f;
@@ -121,8 +121,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
-      width: 90%;
-      max-width: 350px;
+      width: 300px;
     }
 
     input {
@@ -163,6 +162,7 @@
       text-shadow: 0 0 2px #ff4d4d, 0 0 4px #ff4d4d;
     }
 
+    /* Footer */
     footer {
       text-align: center;
       padding: 12px;
@@ -178,38 +178,6 @@
     @keyframes flicker {
       0%, 18%, 22%, 25%, 53%, 57%, 100% { opacity: 1; }
       20%, 24%, 55% { opacity: 0.8; }
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      main h2 {
-        font-size: 2rem;
-      }
-      main p {
-        font-size: 1rem;
-      }
-      nav a {
-        font-size: 0.9rem;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header {
-        flex-direction: column;
-        gap: 10px;
-      }
-      main h2 {
-        font-size: 1.7rem;
-      }
-      main p {
-        font-size: 0.9rem;
-      }
-      .input-section {
-        width: 95%;
-      }
     }
   </style>
 </head>
@@ -227,7 +195,7 @@
   </header>
 
   <main>
-    <h2>🎊 "A Magical Day for a Magical Girl!" ✨</h2>
+    <h2>🎊 "a Magical Day for a Magical Girl!" ✨ </h2>
     <p>Enter Payal's Date of Birth</p>
 
     <div class="input-section">
@@ -245,6 +213,7 @@
     function checkLogin() {
       const dob = document.getElementById("dob").value.trim();
       const errorDiv = document.getElementById("error");
+
       if (dob === "03102004") {
         window.location.href = "birthday.html";
       } else {
