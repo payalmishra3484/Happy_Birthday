@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎉 Happy Birthday Payal!</title>
+  <style>
+    /* Import fonts */
+    @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(circle at center, #111, #000);
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    /* Heading style */
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 3rem;
+      font-weight: bold;
+      color: rgb(101, 8, 77);
+      text-shadow: 0 0 6px #ff0, 0 0 12px rgb(181, 35, 40);
+      animation: floatText 3s ease-in-out infinite alternate;
+      margin: 15px 0;
+    }
+
+    @keyframes floatText {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Container for photo and quotes */
+    .photo-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px 0;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Quote styling */
+    .quote {
+      max-width: 120px;
+      font-family: 'Lobster', cursive;
+      font-size: 1rem;
+      color: #cfc18f;
+      text-shadow: 0 0 3px rgb(79, 79, 7), 0 0 6px rgb(211, 37, 211);
+      animation: floatQuote 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes floatQuote {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Photo frame adjustments */
+    .photo-frame {
+      padding: 8px;
+      border: 3px solid #0ff;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #0ff, 0 0 30px #0ff;
+    }
+
+    .photo-frame img {
+      width: 180px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    button {
+      padding: 10px 18px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #f0f;
+      color: #fff;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 15px;
+      box-shadow: 0 0 15px #f0f, 0 0 30px #f0f;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #0ff;
+      box-shadow: 0 0 30px #0ff, 0 0 60px #0ff;
+    }
+
+    /* Confetti */
+    .confetti {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: #0ff;
+      animation: fall 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 500px) {
+      h1 { font-size: 2rem; }
+      .photo-frame img { width: 140px; height: 200px; }
+      .quote { max-width: 100px; font-size: 0.9rem; }
+      button { font-size: 0.9rem; padding: 8px 14px; }
+      .photo-container { gap: 10px; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <h1>🎂 Happy Birthday, Payal! 🎉</h1>
+
+  <div class="photo-container">
+    <div class="quote">"Another year older, wiser and more fabulous!"</div>
+    
+    <div class="photo-frame">
+      <img src="birthday_image.jpg" alt="Payal's Photo">
+    </div>
+    
+    <div class="quote">"Wishing you a day full of love, laughter & cake!"</div>
+  </div>
+
+  <button onclick="sendWish()">💌 Send Wish on WhatsApp</button>
+
+  <audio autoplay loop>
+    <source src="Happy_birthday.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    // Confetti
+    for (let i = 0; i < 100; i++) {
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = `${Math.random() * 100}vw`;
+      confetti.style.top = `${Math.random() * -100}px`;
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+      confetti.style.animationDuration = `${Math.random() * 3 + 2}s`;
+      document.body.appendChild(confetti);
+    }
+
+    // WhatsApp Wish
+    function sendWish() {
+      const message = "🎂 Happy Birthday Payal! 💖🎉 Wishing you lots of happiness, love & success!";
+      const phoneNumber = "917205773484"; // Replace with her WhatsApp number
+      const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
