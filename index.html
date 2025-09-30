@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HappyPayal | Birthday Surprise</title>
+
   <style>
     /* Import fonts */
     @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap'); /* For heading */
@@ -52,7 +53,7 @@
 
     header h1 {
       margin: 0;
-      font-size: 2rem;
+      font-size: 1.5rem; /* decreased from 2rem */
       font-weight: bold;
       background: linear-gradient(90deg, #0ff, #f0f, #ff0);
       -webkit-background-clip: text;
@@ -60,6 +61,10 @@
       text-shadow: 0 0 3px #0ff, 0 0 6px #f0f, 0 0 10px #ff0;
       animation: flicker 2.5s infinite alternate;
       letter-spacing: 1px;
+      max-width: 200px; /* limits width so it stays narrow */
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     nav a {
@@ -89,10 +94,9 @@
       position: relative;
     }
 
-    /* Heading with bold Pacifico font */
     main h2 {
       font-family: 'Pacifico', cursive;
-      font-size: 3rem;
+      font-size: 2rem; /* decreased from 3rem */
       font-weight: bold;
       color: rgb(101, 8, 77);
       text-shadow: 0 0 6px #ff0, 0 0 12px rgb(181, 35, 40);
@@ -100,10 +104,9 @@
       animation: floatText 3s ease-in-out infinite alternate;
     }
 
-    /* Paragraph with different font */
     main p {
       font-family: 'Roboto Slab', serif;
-      font-size: 1.5rem;
+      font-size: 1.2rem; /* decreased from 1.5rem */
       font-weight: 500;
       color: #0ff;
       text-shadow: 0 0 4px #0ff, 0 0 8px #f0f;
@@ -197,7 +200,6 @@
   <main>
     <h2>🎊 "a Magical Day for a Magical Girl!" ✨ </h2>
     <p>Enter Payal's Date of Birth</p>
-
     <div class="input-section">
       <input type="password" id="dob" placeholder="DDMMYYYY" />
       <button onclick="checkLogin()">Let's Surprise Payal</button>
@@ -213,7 +215,6 @@
     function checkLogin() {
       const dob = document.getElementById("dob").value.trim();
       const errorDiv = document.getElementById("error");
-
       if (dob === "03102004") {
         window.location.href = "birthday.html";
       } else {
